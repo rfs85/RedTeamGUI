@@ -28,17 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("Domain");
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("Groups");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("Hash");
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
+            "LUID",
+            "Sub1"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("Password");
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Username");
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("LUID");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Username");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Groups");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Domain");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Password");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Hash");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Cache Flags");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Client");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("ID");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("KB Encryption");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("KDC");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Renew");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Server");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Sessin Key");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Start");
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("Ticket Flags");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Rubeus = new System.Windows.Forms.TabPage();
+            this.Mimikatz = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +73,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.executeBtn = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.credentials = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -74,45 +87,86 @@
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.binariesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.powershellToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dumpCreds = new System.Windows.Forms.Button();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.attacks = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Certify = new System.Windows.Forms.TabPage();
+            this.AMSI = new System.Windows.Forms.TabPage();
+            this.Enumeration = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.TicketsSubMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.powerSploitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.powerUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aDModuleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.Rubeus.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.credentials.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.attacks.SuspendLayout();
+            this.TicketsSubMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.Rubeus);
+            this.tabControl1.Controls.Add(this.Mimikatz);
+            this.tabControl1.Controls.Add(this.Certify);
+            this.tabControl1.Controls.Add(this.AMSI);
+            this.tabControl1.Controls.Add(this.Enumeration);
             this.tabControl1.Location = new System.Drawing.Point(6, 77);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(958, 586);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // Rubeus
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Gray;
-            this.tabPage1.Controls.Add(this.tabControl2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(950, 560);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Rubeus";
+            this.Rubeus.BackColor = System.Drawing.Color.Gray;
+            this.Rubeus.Controls.Add(this.tabControl2);
+            this.Rubeus.Location = new System.Drawing.Point(4, 22);
+            this.Rubeus.Name = "Rubeus";
+            this.Rubeus.Padding = new System.Windows.Forms.Padding(3);
+            this.Rubeus.Size = new System.Drawing.Size(950, 560);
+            this.Rubeus.TabIndex = 0;
+            this.Rubeus.Text = "Rubeus";
             // 
-            // tabPage2
+            // Mimikatz
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(808, 322);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "MimiKatz";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.Mimikatz.Location = new System.Drawing.Point(4, 22);
+            this.Mimikatz.Name = "Mimikatz";
+            this.Mimikatz.Padding = new System.Windows.Forms.Padding(3);
+            this.Mimikatz.Size = new System.Drawing.Size(950, 560);
+            this.Mimikatz.TabIndex = 1;
+            this.Mimikatz.Text = "MimiKatz";
+            this.Mimikatz.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -123,7 +177,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 27);
+            this.groupBox1.Location = new System.Drawing.Point(6, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(948, 48);
             this.groupBox1.TabIndex = 1;
@@ -152,6 +206,9 @@
             // 
             // toolsToolStripMenuItem
             // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.binariesToolStripMenuItem,
+            this.powershellToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
@@ -164,6 +221,11 @@
             // 
             // modulesToolStripMenuItem
             // 
+            this.modulesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator1,
+            this.powerSploitToolStripMenuItem,
+            this.powerUpToolStripMenuItem,
+            this.aDModuleToolStripMenuItem});
             this.modulesToolStripMenuItem.Name = "modulesToolStripMenuItem";
             this.modulesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.modulesToolStripMenuItem.Text = "&Modules";
@@ -249,23 +311,21 @@
             // listView1
             // 
             this.listView1.GridLines = true;
-            listViewGroup1.Header = "ListViewGroup";
-            listViewGroup1.Name = "listViewGroup1";
-            this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1});
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
+            listViewItem11,
+            listViewItem12,
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16});
             this.listView1.Location = new System.Drawing.Point(6, 669);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(1604, 213);
+            this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Tile;
             // 
             // textBox4
             // 
@@ -276,6 +336,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.runBtn);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.executeBtn);
@@ -313,7 +374,8 @@
             // tabControl2
             // 
             this.tabControl2.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.credentials);
+            this.tabControl2.Controls.Add(this.attacks);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
@@ -323,31 +385,34 @@
             this.tabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl2.TabIndex = 0;
             // 
-            // tabPage3
+            // credentials
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(936, 534);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Credentials";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.credentials.Controls.Add(this.panel1);
+            this.credentials.Controls.Add(this.groupBox4);
+            this.credentials.Location = new System.Drawing.Point(4, 4);
+            this.credentials.Name = "credentials";
+            this.credentials.Padding = new System.Windows.Forms.Padding(3);
+            this.credentials.Size = new System.Drawing.Size(942, 534);
+            this.credentials.TabIndex = 0;
+            this.credentials.Text = "Credentials";
+            this.credentials.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.groupBox3);
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(942, 534);
             this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Attacks";
+            this.tabPage4.Text = "Tickets";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(936, 534);
+            this.tabPage5.Size = new System.Drawing.Size(942, 534);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Forests";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -362,7 +427,9 @@
             this.toolStripStatusLabel5,
             this.toolStripStatusLabel6,
             this.toolStripStatusLabel7,
-            this.toolStripStatusLabel8});
+            this.toolStripStatusLabel8,
+            this.toolStripStatusLabel9,
+            this.toolStripStatusLabel10});
             this.statusStrip1.Location = new System.Drawing.Point(0, 885);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1622, 22);
@@ -371,8 +438,9 @@
             // 
             // toolStripStatusLabel1
             // 
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(20, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(21, 17);
             this.toolStripStatusLabel1.Text = "IP:";
             // 
             // comboBox2
@@ -405,8 +473,9 @@
             // 
             // toolStripStatusLabel3
             // 
+            this.toolStripStatusLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(63, 17);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(67, 17);
             this.toolStripStatusLabel3.Text = "Username:";
             // 
             // toolStripStatusLabel4
@@ -417,8 +486,9 @@
             // 
             // toolStripStatusLabel5
             // 
+            this.toolStripStatusLabel5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(27, 17);
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(30, 17);
             this.toolStripStatusLabel5.Text = "SID:";
             // 
             // toolStripStatusLabel6
@@ -429,8 +499,9 @@
             // 
             // toolStripStatusLabel7
             // 
+            this.toolStripStatusLabel7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(52, 17);
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(53, 17);
             this.toolStripStatusLabel7.Text = "Domain:";
             // 
             // toolStripStatusLabel8
@@ -438,6 +509,263 @@
             this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
             this.toolStripStatusLabel8.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel8.Text = "toolStripStatusLabel8";
+            // 
+            // binariesToolStripMenuItem
+            // 
+            this.binariesToolStripMenuItem.Name = "binariesToolStripMenuItem";
+            this.binariesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.binariesToolStripMenuItem.Text = "&Binaries";
+            this.binariesToolStripMenuItem.Click += new System.EventHandler(this.binariesToolStripMenuItem_Click);
+            // 
+            // powershellToolStripMenuItem
+            // 
+            this.powershellToolStripMenuItem.Name = "powershellToolStripMenuItem";
+            this.powershellToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.powershellToolStripMenuItem.Text = "&PS Modules";
+            this.powershellToolStripMenuItem.Click += new System.EventHandler(this.powershellToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Location = new System.Drawing.Point(6, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(424, 100);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(253, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Dump creds";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "klist",
+            "triage",
+            "dump"});
+            this.comboBox3.Location = new System.Drawing.Point(26, 33);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(202, 21);
+            this.comboBox3.TabIndex = 0;
+            this.comboBox3.Text = "dump";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dumpCreds);
+            this.groupBox4.Controls.Add(this.comboBox4);
+            this.groupBox4.Location = new System.Drawing.Point(7, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(424, 100);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "groupBox4";
+            // 
+            // dumpCreds
+            // 
+            this.dumpCreds.Location = new System.Drawing.Point(253, 33);
+            this.dumpCreds.Name = "dumpCreds";
+            this.dumpCreds.Size = new System.Drawing.Size(97, 23);
+            this.dumpCreds.TabIndex = 1;
+            this.dumpCreds.Text = "Dump creds";
+            this.dumpCreds.UseVisualStyleBackColor = true;
+            this.dumpCreds.Click += new System.EventHandler(this.dumpCreds_Click);
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "SAM"});
+            this.comboBox4.Location = new System.Drawing.Point(26, 33);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(202, 21);
+            this.comboBox4.TabIndex = 0;
+            this.comboBox4.Text = "/dump";
+            // 
+            // attacks
+            // 
+            this.attacks.Controls.Add(this.button2);
+            this.attacks.Location = new System.Drawing.Point(4, 4);
+            this.attacks.Name = "attacks";
+            this.attacks.Size = new System.Drawing.Size(942, 534);
+            this.attacks.TabIndex = 3;
+            this.attacks.Text = "Attacks";
+            this.attacks.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(69, 606);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Select: ";
+            // 
+            // toolStripStatusLabel9
+            // 
+            this.toolStripStatusLabel9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.toolStripStatusLabel9.Name = "toolStripStatusLabel9";
+            this.toolStripStatusLabel9.Size = new System.Drawing.Size(70, 17);
+            this.toolStripStatusLabel9.Text = "OS Version:";
+            // 
+            // toolStripStatusLabel10
+            // 
+            this.toolStripStatusLabel10.Name = "toolStripStatusLabel10";
+            this.toolStripStatusLabel10.Size = new System.Drawing.Size(124, 17);
+            this.toolStripStatusLabel10.Text = "toolStripStatusLabel10";
+            // 
+            // Certify
+            // 
+            this.Certify.Location = new System.Drawing.Point(4, 22);
+            this.Certify.Name = "Certify";
+            this.Certify.Size = new System.Drawing.Size(950, 560);
+            this.Certify.TabIndex = 2;
+            this.Certify.Text = "Certify";
+            this.Certify.UseVisualStyleBackColor = true;
+            // 
+            // AMSI
+            // 
+            this.AMSI.Location = new System.Drawing.Point(4, 22);
+            this.AMSI.Name = "AMSI";
+            this.AMSI.Size = new System.Drawing.Size(950, 560);
+            this.AMSI.TabIndex = 3;
+            this.AMSI.Text = "AMSI";
+            this.AMSI.UseVisualStyleBackColor = true;
+            // 
+            // Enumeration
+            // 
+            this.Enumeration.Location = new System.Drawing.Point(4, 22);
+            this.Enumeration.Name = "Enumeration";
+            this.Enumeration.Size = new System.Drawing.Size(950, 560);
+            this.Enumeration.TabIndex = 4;
+            this.Enumeration.Text = "Enumeration";
+            this.Enumeration.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(234, 103);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // TicketsSubMenu
+            // 
+            this.TicketsSubMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.TicketsSubMenu.Name = "TicketsSubMenu";
+            this.TicketsSubMenu.Size = new System.Drawing.Size(111, 48);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem3});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.toolStripMenuItem1.Text = "&Export";
+            // 
+            // powerSploitToolStripMenuItem
+            // 
+            this.powerSploitToolStripMenuItem.Name = "powerSploitToolStripMenuItem";
+            this.powerSploitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.powerSploitToolStripMenuItem.Text = "&PowerSploit";
+            // 
+            // powerUpToolStripMenuItem
+            // 
+            this.powerUpToolStripMenuItem.Name = "powerUpToolStripMenuItem";
+            this.powerUpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.powerUpToolStripMenuItem.Text = "&PowerUp";
+            // 
+            // aDModuleToolStripMenuItem
+            // 
+            this.aDModuleToolStripMenuItem.Name = "aDModuleToolStripMenuItem";
+            this.aDModuleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aDModuleToolStripMenuItem.Text = "&AD Module";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.listView2);
+            this.panel1.Location = new System.Drawing.Point(6, 309);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(930, 219);
+            this.panel1.TabIndex = 4;
+            // 
+            // listView2
+            // 
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.listView2.ContextMenuStrip = this.TicketsSubMenu;
+            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView2.FullRowSelect = true;
+            this.listView2.GridLines = true;
+            listViewGroup1.Header = "ListViewGroup";
+            listViewGroup1.Name = "listViewGroup1";
+            listViewGroup1.Tag = "RFS";
+            this.listView2.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
+            listViewGroup1});
+            this.listView2.HideSelection = false;
+            listViewItem1.StateImageIndex = 0;
+            listViewItem2.StateImageIndex = 0;
+            listViewItem3.StateImageIndex = 0;
+            listViewItem4.StateImageIndex = 0;
+            listViewItem5.StateImageIndex = 0;
+            listViewItem6.StateImageIndex = 0;
+            listViewItem7.StateImageIndex = 0;
+            listViewItem8.StateImageIndex = 0;
+            listViewItem9.StateImageIndex = 0;
+            listViewItem10.StateImageIndex = 0;
+            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10});
+            this.listView2.LabelWrap = false;
+            this.listView2.Location = new System.Drawing.Point(0, 0);
+            this.listView2.Name = "listView2";
+            this.listView2.ShowGroups = false;
+            this.listView2.Size = new System.Drawing.Size(930, 219);
+            this.listView2.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listView2.TabIndex = 0;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.SmallIcon;
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(110, 22);
+            this.toolStripMenuItem2.Text = "&Import";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Text = "toolStripMenuItem3";
             // 
             // MainForm1
             // 
@@ -455,7 +783,7 @@
             this.Name = "MainForm1";
             this.Text = "RedTeam GUI by RFS";
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.Rubeus.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -463,8 +791,15 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabControl2.ResumeLayout(false);
+            this.credentials.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.attacks.ResumeLayout(false);
+            this.TicketsSubMenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,8 +808,8 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage Rubeus;
+        private System.Windows.Forms.TabPage Mimikatz;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -496,7 +831,7 @@
         private System.Windows.Forms.Button executeBtn;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TabControl tabControl2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage credentials;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -510,6 +845,37 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
+        private System.Windows.Forms.ToolStripMenuItem binariesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem powershellToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button dumpCreds;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TabPage attacks;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel10;
+        private System.Windows.Forms.TabPage Certify;
+        private System.Windows.Forms.TabPage AMSI;
+        private System.Windows.Forms.TabPage Enumeration;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ContextMenuStrip TicketsSubMenu;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem powerSploitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem powerUpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aDModuleToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }
 

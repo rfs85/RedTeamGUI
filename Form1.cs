@@ -14,6 +14,8 @@ using System.Collections.ObjectModel;
 using System.Management.Automation.Runspaces;
 using System.Net;
 using System.Net.NetworkInformation;
+using System.DirectoryServices.ActiveDirectory;
+using RedTeamGUI;
 
 namespace RedTeamGUI
 {
@@ -35,17 +37,36 @@ namespace RedTeamGUI
             //Username
             String myUserName = Environment.UserName;
             toolStripStatusLabel4.Text = myUserName;
-            //Domain
+            //SID
             String SID = System.Security.Principal.WindowsIdentity.GetCurrent().Groups[0].ToString();
             toolStripStatusLabel6.Text = SID;
 
-            String DOM = System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName;
+            var domain = Environment.UserDomainName;
+            toolStripStatusLabel8.Text = domain.ToString();
 
-            toolStripStatusLabel8.Text = DOM.ToString();
-            
+           
+
+            var version = Environment.Version;
+            toolStripStatusLabel10.Text = version.ToString();
+
+            string title = @"
+                            UNINSTALLING VALORANT
+                            ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▢
+　　                            ╭━╮╭━╮╭╮　╱ 　　
+　　                            ╰━┫╰━┫╰╯╱╭╮ 　　
+　　                            ╰━╯╰━╯　╱　╰╯ 　　　　　
+　　　                                 COMPLETE
+                            ";
+
+            textBox5.Text = title;
+
+
+
+
+
         }
 
-       
+
         private string RunScript(string script)
         {
             Runspace runspace = RunspaceFactory.CreateRunspace();
@@ -59,12 +80,28 @@ namespace RedTeamGUI
             foreach (PSObject obj in results)
             {
                 sb.AppendLine(obj.ToString());
-                
+
             }
             return sb.ToString();
 
 
+
         }
+        public string ExecuteScript(string pathToScript)
+        {
+            var scriptArguments = "-ExecutionPolicy Bypass -File \"" + pathToScript + "\"";
+            var processStartInfo = new ProcessStartInfo("powershell.exe", scriptArguments);
+            processStartInfo.RedirectStandardOutput = true;
+            processStartInfo.RedirectStandardError = true;
+
+            var process = new Process();
+            process.StartInfo = processStartInfo;
+            process.Start();
+            string output = process.StandardOutput.ReadToEnd();
+            string error = process.StandardError.ReadToEnd();
+            return output; // I am invoked using ProcessStartInfoClass!
+        }
+
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
@@ -82,6 +119,31 @@ namespace RedTeamGUI
         {
             textBox5.Clear();
             textBox5.Text = RunScript(comboBox2.Text);
+        }
+
+        private void binariesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Binaries binaries = new Binaries();
+            binaries.ShowDialog();
+        }
+
+        private void powershellToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PSModules psmodules = new PSModules();
+            psmodules.ShowDialog();
+
+        }
+
+        private void dumpCreds_Click(object sender, EventArgs e)
+        {
+            textBox5.Clear();
+            textBox5.Text = ExecuteScript(comboBox2.Text);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //
+   
         }
     }
 }
