@@ -32,7 +32,6 @@ namespace RedTeamGUI
         {
             var guser = Environment.UserName;
             return guser;
-            ;
         }
 
 
