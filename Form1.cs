@@ -16,6 +16,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.DirectoryServices.ActiveDirectory;
 using RedTeamGUI;
+using System.Management;
 
 namespace RedTeamGUI
 {
@@ -35,16 +36,24 @@ namespace RedTeamGUI
             myIP = Dns.GetHostByName(strHostName).AddressList[0].ToString();
             toolStripStatusLabel2.Text = myIP;
             //Username
-            String myUserName = Environment.UserName;
-            toolStripStatusLabel4.Text = myUserName;
+            NetworkClass guset = new NetworkClass(); ;
+            toolStripStatusLabel4.Text = guset.ToString();
             //SID
             String SID = System.Security.Principal.WindowsIdentity.GetCurrent().Groups[0].ToString();
             toolStripStatusLabel6.Text = SID;
 
-            var domain = Environment.UserDomainName;
-            toolStripStatusLabel8.Text = domain.ToString();
 
-           
+            SelectQuery query = new SelectQuery("Win32_UserAccount");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
+            foreach (ManagementObject envVar in searcher.Get())
+            {
+                Console.WriteLine("Username : {0}", envVar["Name"]);
+            }
+
+
+
+
+
 
             var version = Environment.Version;
             toolStripStatusLabel10.Text = version.ToString();
@@ -60,6 +69,8 @@ namespace RedTeamGUI
 
             textBox5.Text = title;
 
+            NetworkClass netclass = new NetworkClass();
+            toolStripStatusLabel8.Text = netclass.GetDomain();
 
 
 
