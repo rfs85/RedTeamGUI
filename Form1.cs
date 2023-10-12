@@ -17,6 +17,9 @@ using System.Net.NetworkInformation;
 using System.DirectoryServices.ActiveDirectory;
 using RedTeamGUI;
 using System.Management;
+using static RedTeamGUI.PowerClass;
+
+
 
 namespace RedTeamGUI
 {
@@ -43,18 +46,6 @@ namespace RedTeamGUI
             toolStripStatusLabel6.Text = SID;
 
 
-            SelectQuery query = new SelectQuery("Win32_UserAccount");
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
-            foreach (ManagementObject envVar in searcher.Get())
-            {
-                Console.WriteLine("Username : {0}", envVar["Name"]);
-            }
-
-
-
-
-
-
             var version = Environment.Version;
             toolStripStatusLabel10.Text = version.ToString();
 
@@ -78,58 +69,28 @@ namespace RedTeamGUI
         }
 
 
-        private string RunScript(string script)
-        {
-            Runspace runspace = RunspaceFactory.CreateRunspace();
-            runspace.Open();
-            Pipeline pipeline = runspace.CreatePipeline();
-            pipeline.Commands.AddScript(script);
-            pipeline.Commands.Add("Out-String");
-            Collection<PSObject> results = pipeline.Invoke();
-            runspace.Close();
-            StringBuilder sb = new StringBuilder();
-            foreach (PSObject obj in results)
-            {
-                sb.AppendLine(obj.ToString());
-
-            }
-            return sb.ToString();
-
-
-
-        }
-        public string ExecuteScript(string pathToScript)
-        {
-            var scriptArguments = "-ExecutionPolicy Bypass -File \"" + pathToScript + "\"";
-            var processStartInfo = new ProcessStartInfo("powershell.exe", scriptArguments);
-            processStartInfo.RedirectStandardOutput = true;
-            processStartInfo.RedirectStandardError = true;
-
-            var process = new Process();
-            process.StartInfo = processStartInfo;
-            process.Start();
-            string output = process.StandardOutput.ReadToEnd();
-            string error = process.StandardError.ReadToEnd();
-            return output; // I am invoked using ProcessStartInfoClass!
-        }
+        
+        
 
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
             textBox5.Clear();
-            textBox5.Text = RunScript(textBox3.Text);
+            //textBox5.Text = RunScript(textBox3.Text);
         }
 
-        private void runBtn_Click(object sender, EventArgs e)
+        public void runBtn_Click(object sender, EventArgs e)
         {
-            textBox5.Clear();
-            textBox5.Text = RunScript(textBox4.Text);
+           PowerClass invps = new PowerClass();
+            textBox5.Text = invps.RunScript(comboBox5.Text);
+           // textBox5.Clear();
+           
         }
 
         private void executeBtn_Click(object sender, EventArgs e)
         {
             textBox5.Clear();
-            textBox5.Text = RunScript(comboBox2.Text);
+            //textBox5.Text = RunScript(comboBox2.Text);
         }
 
         private void binariesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -148,7 +109,7 @@ namespace RedTeamGUI
         private void dumpCreds_Click(object sender, EventArgs e)
         {
             textBox5.Clear();
-            textBox5.Text = ExecuteScript(comboBox2.Text);
+            //textBox5.Text = ExecuteScript(comboBox2.Text);
         }
 
         private void button2_Click(object sender, EventArgs e)

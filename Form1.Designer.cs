@@ -57,6 +57,7 @@
             this.Rubeus = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.credentials = new System.Windows.Forms.TabPage();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -107,7 +108,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.runBtn = new System.Windows.Forms.Button();
@@ -192,6 +192,21 @@
             this.credentials.TabIndex = 0;
             this.credentials.Text = "Credentials";
             this.credentials.UseVisualStyleBackColor = true;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "C:\\tools\\Invoke-Mimikatz.ps1 \"sekurlsa::logonpasswords\"",
+            "C:\\tools\\Rubeus.exe",
+            "C:\\tools\\mimikatz.exe",
+            "C:\\tools\\Loader.exe",
+            "C:\\tools\\Certify.exe find /vulnerable"});
+            this.comboBox5.Location = new System.Drawing.Point(69, 15);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(484, 21);
+            this.comboBox5.TabIndex = 5;
+            this.comboBox5.Text = "C:\\tools\\Invoke-Mimikatz.ps1";
             // 
             // panel1
             // 
@@ -663,22 +678,15 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Tile;
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(69, 16);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(484, 20);
-            this.textBox4.TabIndex = 4;
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.comboBox5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.runBtn);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.executeBtn);
             this.groupBox2.Controls.Add(this.textBox5);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Location = new System.Drawing.Point(970, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(640, 636);
@@ -886,7 +894,6 @@
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button executeBtn;
         private System.Windows.Forms.TextBox textBox5;
@@ -939,6 +946,7 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox comboBox5;
     }
 }
 
