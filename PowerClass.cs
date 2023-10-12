@@ -47,14 +47,14 @@ namespace RedTeamGUI
             var processStartInfo = new ProcessStartInfo("powershell.exe", scriptArguments);
             processStartInfo.RedirectStandardOutput = true;
             processStartInfo.RedirectStandardError = true;
-            processStartInfo.UseShellExecute = true;
+            processStartInfo.UseShellExecute = false;
 
             var process = new Process();
             process.StartInfo = processStartInfo;
             process.Start();
             string output = process.StandardOutput.ReadToEnd();
             string error = process.StandardError.ReadToEnd();
-            return output; // I am invoked using ProcessStartInfoClass!
+            return output.ToString(); // I am invoked using ProcessStartInfoClass!
         }
 
         public static PowerShell Create(string pathToScript)

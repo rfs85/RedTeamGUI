@@ -82,7 +82,7 @@ namespace RedTeamGUI
         public void runBtn_Click(object sender, EventArgs e)
         {
            PowerClass invps = new PowerClass();
-            textBox5.Text = invps.RunScript(comboBox5.Text);
+            textBox5.Text = invps.ExecuteScript(comboBox5.Text);
            // textBox5.Clear();
            
         }

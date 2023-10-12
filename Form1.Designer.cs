@@ -125,6 +125,11 @@
             this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.payloadsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cobalStrikeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.covenantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msfconsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.Rubeus.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -174,7 +179,8 @@
             this.tabControl2.Controls.Add(this.attacks);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Location = new System.Drawing.Point(0, 0);
+            this.tabControl2.Controls.Add(this.tabPage1);
+            this.tabControl2.Location = new System.Drawing.Point(0, 1);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(950, 560);
@@ -201,7 +207,8 @@
             "C:\\tools\\Rubeus.exe",
             "C:\\tools\\mimikatz.exe",
             "C:\\tools\\Loader.exe",
-            "C:\\tools\\Certify.exe find /vulnerable"});
+            "C:\\tools\\Certify.exe find /vulnerable",
+            "C:\\tools\\winPEASx64.exe"});
             this.comboBox5.Location = new System.Drawing.Point(69, 15);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(484, 21);
@@ -564,6 +571,7 @@
             this.fileToolStripMenuItem,
             this.toolsToolStripMenuItem,
             this.configsToolStripMenuItem,
+            this.payloadsToolStripMenuItem,
             this.modulesToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -621,24 +629,24 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(134, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // powerSploitToolStripMenuItem
             // 
             this.powerSploitToolStripMenuItem.Name = "powerSploitToolStripMenuItem";
-            this.powerSploitToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.powerSploitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.powerSploitToolStripMenuItem.Text = "&PowerSploit";
             // 
             // powerUpToolStripMenuItem
             // 
             this.powerUpToolStripMenuItem.Name = "powerUpToolStripMenuItem";
-            this.powerUpToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.powerUpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.powerUpToolStripMenuItem.Text = "&PowerUp";
             // 
             // aDModuleToolStripMenuItem
             // 
             this.aDModuleToolStripMenuItem.Name = "aDModuleToolStripMenuItem";
-            this.aDModuleToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.aDModuleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aDModuleToolStripMenuItem.Text = "&AD Module";
             // 
             // helpToolStripMenuItem
@@ -833,6 +841,43 @@
             this.toolStripStatusLabel10.Size = new System.Drawing.Size(124, 17);
             this.toolStripStatusLabel10.Text = "toolStripStatusLabel10";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(942, 534);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Convertions";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // payloadsToolStripMenuItem
+            // 
+            this.payloadsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cobalStrikeToolStripMenuItem,
+            this.covenantToolStripMenuItem,
+            this.msfconsoleToolStripMenuItem});
+            this.payloadsToolStripMenuItem.Name = "payloadsToolStripMenuItem";
+            this.payloadsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.payloadsToolStripMenuItem.Text = "&Payloads";
+            // 
+            // cobalStrikeToolStripMenuItem
+            // 
+            this.cobalStrikeToolStripMenuItem.Name = "cobalStrikeToolStripMenuItem";
+            this.cobalStrikeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cobalStrikeToolStripMenuItem.Text = "Cobal Strike";
+            // 
+            // covenantToolStripMenuItem
+            // 
+            this.covenantToolStripMenuItem.Name = "covenantToolStripMenuItem";
+            this.covenantToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.covenantToolStripMenuItem.Text = "Covenant";
+            // 
+            // msfconsoleToolStripMenuItem
+            // 
+            this.msfconsoleToolStripMenuItem.Name = "msfconsoleToolStripMenuItem";
+            this.msfconsoleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.msfconsoleToolStripMenuItem.Text = "Msfconsole";
+            // 
             // MainForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -947,6 +992,11 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ToolStripMenuItem payloadsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cobalStrikeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem covenantToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem msfconsoleToolStripMenuItem;
     }
 }
 
