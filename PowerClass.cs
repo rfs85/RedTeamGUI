@@ -26,7 +26,7 @@ namespace RedTeamGUI
             pipeline.Commands.AddScript(script);
             pipeline.Commands.Add("Out-String");
             Collection<PSObject> results = pipeline.Invoke();
-            runspace.Close();
+            //runspace.Close();
             StringBuilder sb = new StringBuilder();
             foreach (PSObject obj in results)
             {
