@@ -26,7 +26,7 @@ namespace RedTeamGUI
             pipeline.Commands.AddScript(script);
             pipeline.Commands.Add("Out-String");
             Collection<PSObject> results = pipeline.Invoke();
-            //runspace.Close();
+            runspace.Close();
             StringBuilder sb = new StringBuilder();
             foreach (PSObject obj in results)
             {
@@ -43,7 +43,7 @@ namespace RedTeamGUI
 
         public string ExecuteScript(string pathToScript)
         {
-            var scriptArguments = "-ExecutionPolicy Bypass -File \"" + pathToScript + "\"";
+            var scriptArguments = "-ExecutionPolicy Bypass -NoLogo -NoExit -File \"" + pathToScript + "\"";
             var processStartInfo = new ProcessStartInfo("powershell.exe", scriptArguments);
             processStartInfo.RedirectStandardOutput = true;
             processStartInfo.RedirectStandardError = true;
